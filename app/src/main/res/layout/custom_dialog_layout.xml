@@ -1,53 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:padding="5dp"
-                android:gravity="center"
-                android:layout_height="match_parent">
-    <TextView android:id="@+id/title"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="Good Morning"
-              android:background="#ff7e22"
-              android:textColor="#fff"
-              android:textSize="30sp"
-              android:gravity="center"
-    />
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_below="@+id/title"
-            android:layout_gravity="center_horizontal"
-    />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Select Item"
+        android:textSize="18sp" />
+
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/recycler_view"
-            android:orientation="horizontal">
+        android:id="@+id/llsearch"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_below="@+id/title"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp">
 
-        <Button android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:text="Cancel"
-                android:background="#046907"
-                android:textColor="#fff"
-                android:id="@+id/yes"
-        />
-        <View android:layout_width="2dp" android:layout_height="match_parent"
-              android:background="#fff"
-        />
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/sb__transparent"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="5dp"
+            android:hint="Search..."
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/imgSearchCancel"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:onClick="onClick"
+            android:src="@drawable/ic_close" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/llsearch"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recycler_view"
+        android:orientation="horizontal">
+
         <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:text="Done"
-                android:background="#046907"
-                android:textColor="#fff"
-                android:id="@+id/no"
-        />
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="#046907"
+            android:text="Cancel"
+            android:textColor="#fff" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#fff" />
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="#046907"
+            android:text="Done"
+            android:textColor="#fff" />
 
     </LinearLayout>
 
